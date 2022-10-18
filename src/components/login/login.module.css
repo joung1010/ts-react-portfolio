@@ -1,0 +1,32 @@
+@value makerDarkGrey,makerWhite from '../common/color.css';
+
+.login {
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    background-color: makerDarkGrey;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, -1px -4px 13px 0px rgba(255,255,255,0);
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, -1px -4px 13px 0px rgba(255,255,255,0);
+}
+.input_body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: makerWhite;
+    margin-left: 1.5rem;
+}
+.input_body > label {
+    margin-bottom: 0.3rem;
+}
+
+
+.input_body > input {
+    width: 85%;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
+    font-weight: bold;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid makerWhite;
+    color: makerWhite;
+}
