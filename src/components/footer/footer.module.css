@@ -1,0 +1,32 @@
+@value makerDarkPink,makerWhite,makerDarkGrey from '../common/color.css';
+.footer {
+    text-align: center;
+    color:makerWhite ;
+    background: makerDarkGrey;
+    /*background: linear-gradient(59deg, rgba(211,211,211,1) 73%, rgba(232,231,230,1) 85%);*/
+    width: 100%;
+ }
+.title {
+    margin: 0;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    outline: 0;
+    border: 2px solid makerDarkPink;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 250ms ease-in;
+}
+.button:hover {
+    transform: scale(1.2);
+}
+.email {
+    margin-left: 0.6rem;
+}
+.contact__rights {
+
+}

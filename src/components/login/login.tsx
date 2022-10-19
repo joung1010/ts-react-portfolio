@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './login.module.css'
+import Footer from "../footer/footer";
 
 const GOOGLE_IMG = 'images/google.png';
 const GITHUB_IMG = 'images/github.png';
@@ -17,9 +18,10 @@ const Login = () => {
             </div>
             <div className={styles.button_body}><button className={styles.login_button}>Login</button></div>
             <ul className={styles.login_img}>
+                <li><button className={styles.button}><img src={GITHUB_IMG} alt="github"/></button></li>
                 <li><button className={styles.button}><img src={GOOGLE_IMG} alt="google"/></button></li>
-                <li><button className={styles.button}><img src={GITHUB_IMG} alt="google"/></button></li>
             </ul>
+            <Footer/>
         </section>
     );
 };
