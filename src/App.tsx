@@ -3,7 +3,7 @@ import styles from './App.module.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Login from "./components/login/login";
 
-function App() {
+function App({}) {
     return (
         <div className={styles.App}>
             <BrowserRouter>

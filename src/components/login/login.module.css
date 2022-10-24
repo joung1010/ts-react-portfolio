@@ -66,3 +66,17 @@
     border: 2px solid makerWhite;
     border-radius: 50%;
 }
+
+.new {
+    color: makerWhite;
+    outline: 0;
+    background: transparent;
+    outline: none;
+    border: 0;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+}
+.new:hover {
+    cursor: pointer;
+}
+

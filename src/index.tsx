@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {firebaseAuth,firebaseDataBase} from './service/firebaseInit';
+import {AuthService} from './service/authService';
 
+
+const authService = new AuthService(firebaseAuth);
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App  />
   </React.StrictMode>
 );
 

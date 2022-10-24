@@ -16,11 +16,14 @@ const Login = () => {
                 <label htmlFor="password">비밀번호</label>
                 <input id="password" type="text"/>
             </div>
-            <div className={styles.button_body}><button className={styles.login_button}>Login</button></div>
+            <div className={styles.button_body}>
+                <button className={styles.login_button}>Login</button>
+            </div>
             <ul className={styles.login_img}>
-                <li><button className={styles.button}><img src={GITHUB_IMG} alt="github"/></button></li>
-                <li><button className={styles.button}><img src={GOOGLE_IMG} alt="google"/></button></li>
+                <li><button className={styles.button}><img src={GITHUB_IMG} alt="github" data-name="Google"/></button></li>
+                <li><button className={styles.button}><img src={GOOGLE_IMG} alt="google" data-name="Github"/></button></li>
             </ul>
+            <button className={styles.new}>신규 가입</button>
             <Footer/>
         </section>
     );
