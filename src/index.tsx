@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {firebaseAuth,firebaseDataBase} from './service/firebaseInit';
-import {AuthService} from './service/authService';
+import {AuthService,BasicAuth} from './service/authService';
 
 
 const authService = new AuthService(firebaseAuth);
@@ -13,7 +13,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App  />
+    <App
+        getGithubProvider={authService.getGithubProvider}
+        getGoogleProvider={authService.getGoogleProvider}
+        loginAuth={authService.loginAuth}
+        logout={authService.logout}
+        onAuthStateChanged={authService.onAuthStateChanged}
+    />
   </React.StrictMode>
 );
 
