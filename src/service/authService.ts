@@ -1,6 +1,7 @@
 import {Auth,  User, UserCredential} from "@firebase/auth";
 import {signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signOut, onAuthStateChanged} from "firebase/auth";
 
+
 export interface BasicAuth {
 
     loginAuth(providerName: string): Promise<UserCredential>;
@@ -20,7 +21,7 @@ export class AuthService implements BasicAuth{
 
     constructor(private auth :Auth ) {
         this.googleProvider = new GoogleAuthProvider();
-        this. githubProvider = new GithubAuthProvider();
+        this.githubProvider = new GithubAuthProvider();
     }
     getProvider(target : string) :  GoogleAuthProvider|GithubAuthProvider{
         switch (target) {

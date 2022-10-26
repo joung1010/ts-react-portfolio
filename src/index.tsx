@@ -11,14 +11,11 @@ const authService = new AuthService(firebaseAuth);
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <App
-        getGithubProvider={authService.getGithubProvider}
-        getGoogleProvider={authService.getGoogleProvider}
-        loginAuth={authService.loginAuth}
-        logout={authService.logout}
-        onAuthStateChanged={authService.onAuthStateChanged}
+        authServic={authService}
     />
   </React.StrictMode>
 );
