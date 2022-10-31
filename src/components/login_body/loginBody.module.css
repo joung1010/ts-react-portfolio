@@ -1,0 +1,42 @@
+@value makerWhite from '../common/color.css';
+.input_body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: makerWhite;
+    margin-left: 1.5rem;
+    margin-top: 0.7rem;
+}
+.input_body > label {
+    margin-bottom: 0.3rem;
+}
+
+
+.input_body > input {
+    width: 85%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid makerWhite;
+    color: makerWhite;
+}
+.button_body {
+    text-align: center;
+    margin: 1.2rem 0;
+}
+
+.login_button {
+    color: makerWhite;
+    width: 50%;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 2px solid makerWhite;
+    text-align: center;
+    background-color: transparent;
+}
+.login_button:hover, .button:hover {
+    cursor: pointer;
+}

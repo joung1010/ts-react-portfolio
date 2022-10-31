@@ -15,7 +15,10 @@ type Auth = {
         <div className={styles.App}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Login/>}/>
+                    <Route path="/" element={<Login loginType="login"/>}/>
+                </Routes>
+                <Routes>
+                    <Route path="/join" element={<Login loginType="new"/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
