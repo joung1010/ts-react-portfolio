@@ -6,19 +6,18 @@ import { BasicAuth} from './service/authService';
 
 
 type Auth = {
-    authServic?: BasicAuth;
+    authService?: BasicAuth;
 }
 
- const App:React.FC<Auth> = ({authServic}): JSX.Element => {
-     console.log(authServic);
+ const App:React.FC<Auth> = ({authService}): JSX.Element => {
     return (
         <div className={styles.App}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Login loginType="login"/>}/>
+                    <Route path="/" element={<Login loginType="login" authService={authService}/>}/>
                 </Routes>
                 <Routes>
-                    <Route path="/join" element={<Login loginType="new"/>}/>
+                    <Route path="/join" element={<Login loginType="new" authService={authService}/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
