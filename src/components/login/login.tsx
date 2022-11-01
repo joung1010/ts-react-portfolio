@@ -23,15 +23,15 @@ const Login = ({loginType,authService}:LoginProps) => {
         navigate("/join");
     };
 
-    const gotoPortFollio = (userId: string): void => {
-        navigate("/card", {state: {userId,}})
+    const gotoPortFolio = (userId: string): void => {
+        navigate("/portfolio", {state: {userId,}})
     };
 
     const authLogin = (e: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
         const provider:string = e.currentTarget.dataset.name as string;
           authService!.loginAuth(provider)
               .then((result) => {
-                  gotoPortFollio(result.user.uid);
+                  gotoPortFolio(result.user.uid);
               });
     };
 
