@@ -14,10 +14,13 @@ type Auth = {
         <div className={styles.App}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Login loginType="login" authService={authService}/>}/>
-                </Routes>
-                <Routes>
-                    <Route path="/join" element={<Login loginType="new" authService={authService}/>}/>
+                    {['/','/login','/join'].map(path => {
+                        if (path === '/join') {
+                            return <Route path={path} element={<Login loginType="new" authService={authService}/>}/>;
+                        } else {
+                            return <Route path={path} element={<Login loginType="login" authService={authService}/>}/>
+                        }
+                    })}
                 </Routes>
             </BrowserRouter>
         </div>

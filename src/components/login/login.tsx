@@ -4,6 +4,7 @@ import Footer from "../footer/footer";
 import LoginBody from "../login_body/loginBody";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import { BasicAuth} from '../../service/authService';
+import {User, UserCredential} from "@firebase/auth";
 
 const GOOGLE_IMG = 'images/google.png';
 const GITHUB_IMG = 'images/github.png';
@@ -26,6 +27,9 @@ const Login = ({loginType,authService}:LoginProps) => {
     const gotoPortFolio = (userId: string): void => {
         navigate("/portfolio", {state: {userId,}})
     };
+    const gotoLogin = (userId: string): void => {
+        navigate("/login", {state: {userId,}})
+    };
 
     const authLogin = (e: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
         const provider:string = e.currentTarget.dataset.name as string;
@@ -35,9 +39,17 @@ const Login = ({loginType,authService}:LoginProps) => {
               });
     };
 
+    const onHandleLogin = (email: string, password: string):Promise<UserCredential> => {
+        if (loginType === 'login') {
+            return authService!.login(email, password);
+        } else {
+            return authService!.joinMember(email, password);
+        }
+    };
+
     return (
         <section className={styles.login}>
-           <LoginBody loginType={loginType}/>
+           <LoginBody loginType={loginType} onHandleLogin={onHandleLogin} movePage={loginType === 'login' ? gotoPortFolio : gotoLogin}/>
             <ul className={styles.login_img}>
                 <li><button className={styles.button}><img src={GITHUB_IMG} alt="github" data-name="Github"
                                                            onClick={(event)=>{authLogin(event)}}

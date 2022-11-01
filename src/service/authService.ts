@@ -1,4 +1,4 @@
-import {Auth,  User, UserCredential} from "@firebase/auth";
+import {Auth,  User, UserCredential,signInWithEmailAndPassword,createUserWithEmailAndPassword } from "@firebase/auth";
 import {signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signOut, onAuthStateChanged} from "firebase/auth";
 
 
@@ -13,6 +13,10 @@ export interface BasicAuth {
     getGithubProvider(): GithubAuthProvider;
 
     getGoogleProvider(): GoogleAuthProvider;
+
+    joinMember(email: string, password: string): Promise<UserCredential>;
+
+    login(email: string, password: string): Promise<UserCredential>;
 }
 
 export class AuthService implements BasicAuth{
@@ -55,5 +59,14 @@ export class AuthService implements BasicAuth{
 
     getGoogleProvider():GoogleAuthProvider {
         return this.googleProvider;
+    }
+
+    joinMember(email:string, password:string) {
+        return  createUserWithEmailAndPassword(this.auth, email, password)
+
+    }
+
+    login(email:string, password:string) {
+        return  signInWithEmailAndPassword(this.auth, email, password)
     }
 }
